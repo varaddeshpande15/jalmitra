@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Image</title>
+    <title>JalMitra Reporting System</title>
+    <style>
+        body {
+            background-color: #DCF9FF;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5EE2FF;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            margin: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+            display: block;
+            color: #5EE2FF;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #5B55D3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #483FB8;
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload Image</h1>
+    <h1>Submit a Report</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <!-- Remove the Reporter field from the form -->
         <label for="file">Select Image:</label>
@@ -21,11 +65,12 @@
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required>
         <br>
+        <label for="location">Reporter:</label>
         <!-- Display the currently logged-in user as the Reporter -->
         <input type="text" id="reporter" name="reporter" value="{{ username }}" readonly>
         <br>
         <button type="submit">Upload</button>
     </form>
-    <a href="{{ url_for('user_dashboard') }}"><button>Return to Dashboard</button></a>
+    <a href="{{ url_for('user_dashboard') }}"><button>Return to User Dashboard</button></a>
 </body>
 </html>

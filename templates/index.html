@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JalMitra Login</title>
+    <style>
+        body {
+            background-color: #DCF9FF; /* Light blue background */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5EE2FF; /* Light blue for the heading */
+        }
+
+        button {
+            background-color: #5B55D3; /* Purple button color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #483FB8; /* Darker purple on hover */
+        }
+    </style>
 </head>
 <body>
-    <center>
-        <h1>Login</h1>
-        <a href="{{ url_for('admin_login') }}"><button>Admin Login</button></a>
-        <a href="{{ url_for('user_login') }}"><button>User Login</button></a>
-    </center>
+    <h1>Login</h1>
+    <a href="{{ url_for('admin_login') }}"><button>Admin Login</button></a>
+    <a href="{{ url_for('user_login') }}"><button>User Login</button></a>
 </body>
 </html>
