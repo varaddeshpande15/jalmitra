@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Select Image:</label>
+        <input type="file" id="file" name="file" accept="image/*" required>
+        <br>
+        <label for="title">Problem Title:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="severity">Severity:</label>
+        <input type="text" id="severity" name="severity" required>
+        <br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <br>
+        <label for="reporter">Reporter:</label>
+        <input type="text" id="reporter" name="reporter" required>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+    <a href="{{ url_for('index') }}"><button>Return to Login</button></a>
+</body>
+</html>

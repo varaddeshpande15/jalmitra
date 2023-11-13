@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#mainTable').DataTable();
+        } );
+    </script>
+    <style>
+        /* You can customize the DataTable appearance using CSS */
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <table id="mainTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Problem Image</th>
+                <th>Problem Title</th>
+                <th>Severity</th>
+                <th>Location</th>
+                <th>Reporter</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+                <tr>
+                    <td>{{ row['id'] }}</td>
+                    <td>{{ row['image'] | safe }}</td>
+                    <td>{{ row['problem_title'] }}</td>
+                    <td>{{ row['severity'] }}</td>
+                    <td>{{ row['location'] }}</td>
+                    <td>{{ row['reporter'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}"><button>Return to Login</button></a>
+</body>
+</html>
