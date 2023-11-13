@@ -8,6 +8,7 @@
 <body>
     <h1>Upload Image</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
+        <!-- Remove the Reporter field from the form -->
         <label for="file">Select Image:</label>
         <input type="file" id="file" name="file" accept="image/*" required>
         <br>
@@ -20,11 +21,11 @@
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required>
         <br>
-        <label for="reporter">Reporter:</label>
-        <input type="text" id="reporter" name="reporter" required>
+        <!-- Display the currently logged-in user as the Reporter -->
+        <input type="text" id="reporter" name="reporter" value="{{ username }}" readonly>
         <br>
         <button type="submit">Upload</button>
     </form>
-    <a href="{{ url_for('index') }}"><button>Return to Login</button></a>
+    <a href="{{ url_for('user_dashboard') }}"><button>Return to Dashboard</button></a>
 </body>
 </html>
