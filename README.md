@@ -30,9 +30,12 @@ To install JalMitra on a webserver, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/JalMitra-WebApp.git
-2. Install Flask
+2. Install flask, tensorflow (for keras), pandas, numpy
    ```python
-   pip install Flask
+   pip install flask
+   pip install tensorflow
+   pip install pandas
+   pip intall numpy
 3. Run app.py
    ```python
    python app.py
