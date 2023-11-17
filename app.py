@@ -1,11 +1,12 @@
 import os
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session
+import disastdetect
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# For simplicity, we'll use an in-memory list as a placeholder for a database
+# For simplicity, we'll use an in-memory list as a placeholder for a database - this will be replaced with a DBMS solution at a later stage of development but for now, this works just fine.
 main_table = []
 admin_list = [
     {"admin1": "password1"},
@@ -146,7 +147,6 @@ def upload():
     if request.method == 'POST':
         # Get form data
         title = request.form['title']
-        severity = request.form['severity']
         location = request.form['location']
         reporter = username
 
@@ -155,6 +155,7 @@ def upload():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            severity = disastdetect.calc_severity(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             # Update main table with additional information
             main_table.append({
