@@ -6,6 +6,9 @@
 
 JalMitra is a web application designed to streamline the reporting and resolution of water-related problems in local communities. Empowering both citizens and governing agencies, JalMitra facilitates real-time communication, transparent issue tracking, and efficient problem resolution.
 
+Watch the Into to JalMitra Video here to understand how the project works:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/kWgDd_jb3Xo/0.jpg)](https://www.youtube.com/watch?v=kWgDd_jb3Xo)
+
 ## Features we want to implement in JalMitra
 
 - **Effortless Problem Reporting**: Users can easily report water-related issues by submitting geo-tagged images, eliminating the need for complex bureaucratic procedures.
